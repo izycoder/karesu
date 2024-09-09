@@ -1,9 +1,9 @@
 ## 🔗 LINK
-[![aplikasi pws](https://img.shields.io/badge/TAUTAN%20APLIKASI%20PWS-8A2BE2)](http://fariz-muhammad31-karesu.pbp.cs.ui.ac.id/)
+[![aplikasi pws](https://img.shields.io/badge/CLICK_HERE-TAUTAN_APLIKASI_PWS-blue?labelColor=red)](http://fariz-muhammad31-karesu.pbp.cs.ui.ac.id/)
 
 ## PERTANYAAN
 
-#### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 1. kita dapat membuat sebuah proyek Django baru dengan menginstall django terlebih dahulu beserta library dan package lainnya yang dibutuhkan dalam proses development. kemudian untuk membuat proyeknya kita dapat menggunakan perintah "django-admin startproject karesu ." dalam hal ini karesu adalah nama proyeknya. nantinya akan terbuat direktori baru sesuai dengan nama proyeknya. di posisi ini kita telah membuat proyek Django baru.
 2. Untuk membuat aplikasi dengan nama main pada proyek kita dapat menggunakan perintah "python manage.py startapp main" setelah dijalankan akan membuat direktori baru dengan nama main. Direktori main berisi struktur awal aplikasi Django.
@@ -14,20 +14,24 @@
 7. Untuk melakukan deployment ke PWS terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses melalui Internet kita dapat membuka https://pbp.cs.ui.ac.id/web/ dan mendaftar menggunakan sso ui. setelah itu kita dapat menambahkan proyek baru dengan nama yang diinginkan. setelah itu kita mendapatkan credentials dari pws yang harus disimpan. lalu kita harus menambahkan url deployment kita di settings.py dalam proyek pada ALLOWED_HOSTS. lalu kita Lakukan git add, commit, dan push perubahan ini ke repositori GitHub. kemudian dapat kita lakukan project command yang terdapat di pws. Ketika melakukan push ke PWS, akan ada window yang meminta username dan password dan gunakan credentials yang sebelumnya disimpan (bukan SSO UI). karena sebelumnya branch berubah jadi master kita rubah lagi menjadi main dengan perintah "git branch -M main". kita bisa melihat status proyek di website pws. status building artinya proyek masih dalam proses deployment , running artinya proyek sudah bisa diakses dengan URL deployment, dan failed apabila terdapat hal yang error. kita bisa menekan view project untuk menuju halaman proyek. Apabila kedepannya ada perubahan pada proyek Django yang ingin dipush ke PWS, kita perlu add dan commit ke github lalu menjalankan perintah "git push pws main:master"
 8. terakhir untuk membuat berkas README.md kita cukup membuat file baru yang berisi text atau tulisan yang perlu kita tulis di dalamnya.
 
-#### Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+### Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 
-Client akan menggunakan browser untuk mengakses URL dengan mengirimkan request ke server Django. kemudian terdapat URL routing, Django memeriksa urls.py dengan URL. jika URL benar dan cocok maka reqest akan diteruskan ke views.py. views.py berfungsi untuk menangani logika sesuai permintaan dan memanggil model dari database. selain itu, view juga menentukan template berkas HTML yang akan dikembalikan sebagai response. models.py bisa dibilang sebagai jembatan antara kode dan database. setelah data dari model diperoleh views.py, Django akan menggabungkannya dengan template berkas HTML yang sesuai. setelah HTML selesai dirender, maka Django mengirimkan response berisi berkas HTML dan browser akan menampilkan halaman yang berisi informasi yang diminta. 
-jadi ringaksan alurnya adalah
-CLIENT(permintaan dari browser, membuka URL) -> urls.py(Django memeriksa urls.py dan mencocokannya) -> views.py(memanggil models.py mengambil data dari databse) -> models.py(data diteruskan ke berkas HTML yang nanti dirender) -> berkas HTML(HTML yang sudah dirender akan dikembalikan ke client sebagai response)
+Client akan menggunakan browser untuk mengakses URL dengan mengirimkan request ke server Django. kemudian terdapat URL routing, Django memeriksa urls.py dengan URL. jika URL benar dan cocok maka reqest akan diteruskan ke views.py. views.py berfungsi untuk menangani logika sesuai permintaan dan memanggil model dari database. selain itu, view juga menentukan template berkas HTML yang akan dikembalikan sebagai response. models.py bisa dibilang sebagai jembatan antara kode dan database. setelah data dari model diperoleh views.py, Django akan menggabungkannya dengan template berkas HTML yang sesuai. setelah HTML selesai dirender, maka Django mengirimkan response berisi berkas HTML dan browser akan menampilkan halaman yang berisi informasi yang diminta.
 
-#### Jelaskan fungsi git dalam pengembangan perangkat lunak!
+![gambar](https://drive.google.com/uc?export=view&id=1EwN3MYR-3_ngXpIUrqYSSbxwspOkxFyf) 
+
+#### jadi ringkasan alurnya adalah
+#### CLIENT(permintaan dari browser, membuka URL) -> urls.py(Django memeriksa urls.py dan mencocokannya) -> views.py(memanggil models.py  mengambil data dari databse) -> models.py(data diteruskan ke berkas HTML yang nanti dirender) -> berkas HTML(HTML yang sudah dirender akan dikembalikan ke client sebagai response)
+
+
+### Jelaskan fungsi git dalam pengembangan perangkat lunak!
 
 git sangat membantu pengembang perangkat lunak dalam hal kolaborasi. dengan git yang open source, git bisa dipakai oleh para pengembang untuk menyimpan proyeknya dan bisa dibuat menjadi backup karena git bisa mengembalikan ke versi yang sebelum terjadi error. selain itu, git juga merupakan platform yang fleksibel yang bisa dipakai untuk hosting. contohnya terdapat Gitlab , Github, dan masih banyak lagi. 
 
-#### Menurut Anda, dari semua framework yang ada, mengapa framework Django dijadikan permulaan pembelajaran pengembangan perangkat lunak?
+### Menurut Anda, dari semua framework yang ada, mengapa framework Django dijadikan permulaan pembelajaran pengembangan perangkat lunak?
 
 Menurut saya, hal yang paling penting dalam pengembangan khususnya perangkat lunak adalah pemahaman dari perangkat lunak itu sendiri. sebelumnya kita telah mempelajari bahasa pemrograman Python dalam DDP-1 sehingga framework Django sendiri akan lebih mudah untuk dipahami dan digunakan karena menggunakan bahasa pemrograman Python. selain itu,  framework Django juga memiliki banyak kelebihan seperti menyederhanakan proses development yang sangat menghemat waktu. komunitas Django juga bisa dibilang besar dengan 23335 member di discord, hal ini sangat membantu jika terdapat error atau hal yang belum dipahami dalam proses development menggunakan framework Django.
 
-#### Mengapa model pada Django disebut sebagai ORM?
+### Mengapa model pada Django disebut sebagai ORM?
 
 ORM atau Object-Relational Mapper adalah salah satu fitur Django yang memungkinkan developer untuk berinteraksi dengan database menggunakan objek python ketimbang menulis kueri SQL secara langsung. kita bisa analogikan dengan projek tugas ini yaitu ketika membuat model, model disini akan menjadi representasi struktur tabel dalam basis data yang nantinya digunakan untuk menyimpan dan mengelola data aplikasi. dalam django, model kita bisa berinteraksi untuk membuat, membaca, memperbarui, dan menghapus data dalam basis data dengan object python. kita juga bisa menggunakan shell django untuk berinteraksi. alih alih menulis kueri SQL langsung, dengan kemudahan ini model pada django disebut sebagai ORM.
