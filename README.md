@@ -231,8 +231,3 @@ dan menambahkan url patterns menjadi
 ![jsonid](https://drive.google.com/uc?export=view&id=1T0YNG7NZ78Dvj2W3cwdrTiNXhAERINiv) 
 
 </details>
-
-
-by izy.
-
-![footer](https://drive.google.com/uc?export=view&id=1AqMpX8cg4gIn3URPXpCcSUPPKUrEkuCt) 
