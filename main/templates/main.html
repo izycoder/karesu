@@ -2,15 +2,13 @@
 {% block content %}
 <h1>karesu</h1>
 
-...
 <h5>Nama Aplikasi: </h5>
 <p>{{ nama_aplikasi }}<p>
 <h5>Name: </h5>
 <p>{{ nama }}<p>
 <h5>Class: </h5>
 <p>{{ kelas }}<p>
-...
-...
+
 {% if not product_entries %}
 <p>Belum ada data product pada karesu.</p>
 {% else %}
@@ -38,4 +36,10 @@
 <a href="{% url 'main:create_product_entry' %}">
   <button>Add New Prodduct Entry</button>
 </a>
+
+<a href="{% url 'main:logout' %}">
+  <button>Logout</button>
+</a>
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+
 {% endblock content %}

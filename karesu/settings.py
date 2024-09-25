@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -122,3 +123,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://fariz-muhammad31-mentalhealthtracker.pbp.cs.ui.ac.id/", "https://fariz-muhammad31-mentalhealthtracker.pbp.cs.ui.ac.id/"]
+
+PRODUCTION = os.getenv("PRODUCTION", False)
+DEBUG = not PRODUCTION
