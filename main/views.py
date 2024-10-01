@@ -1,14 +1,16 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, reverse
 from main.forms import ProductForm
 from main.models import Product
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core import serializers
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.decorators import login_required
 import datetime
 from django.urls import reverse
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 @login_required(login_url='/login')
@@ -66,23 +68,71 @@ def register(request):
     return render(request, 'register.html', context)
 
 def login_user(request):
-   if request.method == 'POST':
-      form = AuthenticationForm(data=request.POST)
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-      if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            response = HttpResponseRedirect(reverse("main:show_main"))
-            response.set_cookie('last_login', str(datetime.datetime.now()))
-            return response
+        # Step 1: Check if only username is entered (not password yet)
+        if username and not password:
+            # Check if the username exists in the database
+            try:
+                user_exists = User.objects.get(username=username)
+                context = {'username': username}
+                return render(request, 'login.html', context)
+            except User.DoesNotExist:
+                messages.error(request, 'This username does not exist.')
+                return render(request, 'login.html')
+        
+        # Step 2: Username exists, now check the password
+        elif username and password:
+            user = authenticate(request, username=username, password=password)
 
-   else:
-      form = AuthenticationForm(request)
-   context = {'form': form}
-   return render(request, 'login.html', context)
+            if user is not None:
+                login(request, user)
+                response = HttpResponseRedirect(reverse('main:show_main'))
+                response.set_cookie('last_login', str(datetime.datetime.now()))
+                return response
+            else:
+                messages.error(request, 'Invalid password.')
+                context = {'username': username}
+                return render(request, 'login.html', context)
+        else:
+            messages.error(request, 'This username does not exist.')
 
+    return render(request, 'login.html')
 def logout_user(request):
     logout(request)
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+def edit_product(request, id):
+    # Get mood entry berdasarkan id
+    product = Product.objects.get(pk=id)
+
+    # Set mood entry sebagai instance dari form
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+
+def delete_product(request, id):
+    # Get mood berdasarkan id
+    product = Product.objects.get(pk = id)
+    # Hapus mood
+    product.delete()
+    # Kembali ke halaman awal
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def show_products(request):
+    product_entries = Product.objects.filter(user=request.user)  # Rename this to product_entries
+    context = {
+        'product_entries': product_entries  # Change 'products' to 'product_entries'
+    }
+    return render(request, "products.html", context)
+

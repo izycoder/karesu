@@ -491,11 +491,379 @@ kemudian agar pengguna yang login bisa tahu bahwa dia sudah login, kita bisa men
 </details>
 
 <details tugas5>
-  <summary><b style="font-size:25px;">📕 TUGAS 5 - TBA.</b></summary>
-  TBA.
+  <summary><b style="font-size:25px;">📕 TUGAS 5 - Desain Web menggunakan HTML, CSS dan Framework CSS.</b></summary>
+
+   ## Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+Ketika sebuah elemen HTML memiliki beberapa CSS selector yang berlaku, urutan prioritas (spesifisitas) menentukan aturan mana yang akan diterapkan. Berikut adalah urutan prioritas pengambilan CSS selector dari yang terendah hingga tertinggi:<br>
+
+**Inline Styles:** Memiliki prioritas tertinggi karena ditulis langsung pada elemen HTML.<br>
+**ID Selector:** Lebih spesifik dibandingkan kelas dan elemen.<br>
+**Kelas, Pseudo-class, dan Atribut:** Lebih spesifik dibandingkan selector elemen.<br>
+**Selector Elemen dan Pseudo-elemen:** Memiliki prioritas terendah.<br>
+**!important:** Meng-overwrite semua aturan lainnya, kecuali jika ada lebih dari satu aturan !important, maka spesifisitas normal tetap dipertimbangkan.<br>
+
+   ## Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+   
+### **Mengapa Responsive Design Menjadi Konsep Penting dalam Pengembangan Aplikasi Web?**
+
+Responsive design adalah pendekatan dalam desain web yang memastikan tampilan dan fungsionalitas situs web optimal di berbagai perangkat dan ukuran layar, mulai dari ponsel pintar hingga desktop. Konsep ini menjadi sangat penting dalam pengembangan aplikasi web karena beberapa alasan yang sejalan dengan prinsip-prinsip **Laws of UX** dari [lawsofux.com](https://lawsofux.com/). Berikut adalah penjelasan mengapa responsive design krusial, disertai contoh aplikasi yang telah dan belum menerapkannya.
+
+### 1. **Aesthetic-Usability Effect**
+
+**Prinsip:** Pengguna sering kali menganggap aplikasi yang terlihat lebih estetis lebih mudah digunakan.
+
+**Penerapan Responsive Design:**
+Dengan responsive design, aplikasi web menyesuaikan tampilannya secara estetis di berbagai perangkat, meningkatkan kesan visual yang menyenangkan dan profesional. Hal ini tidak hanya menarik pengguna tetapi juga meningkatkan persepsi mereka terhadap kemudahan penggunaan aplikasi.
+
+**Contoh Aplikasi yang Menerapkan:**
+- **Spotify Web:** Spotify menggunakan desain responsif yang memastikan pengalaman pengguna yang konsisten dan estetis baik di desktop maupun perangkat mobile.
+
+**Contoh Aplikasi yang Tidak Menerapkan:**
+- **Etsy (Versi Lama):** Sebelum pembaruan besar-besaran, versi lama Etsy kurang responsif, sehingga tampilan produk dan navigasi kurang estetis di perangkat mobile, mengurangi kenyamanan pengguna.
+
+### 2. **Fitts’s Law**
+
+**Prinsip:** Waktu yang diperlukan untuk mencapai target meningkat dengan jarak dan ukuran target.
+
+**Penerapan Responsive Design:**
+Dengan responsive design, tombol dan elemen interaktif lainnya disesuaikan ukurannya agar mudah diakses pada layar yang lebih kecil. Ini mengurangi waktu dan usaha yang diperlukan pengguna untuk berinteraksi dengan elemen tersebut, meningkatkan efisiensi penggunaan.
+
+**Contoh Aplikasi yang Menerapkan:**
+- **Google Maps:** Pada perangkat mobile, tombol navigasi diperbesar dan ditempatkan strategis untuk memudahkan interaksi pengguna, sesuai dengan Fitts’s Law.
+
+**Contoh Aplikasi yang Tidak Menerapkan:**
+- **LinkedIn (Versi Lama):** Sebelum perombakan desain, tombol-tombol penting seperti "Connect" atau "Message" terlalu kecil dan tersebar di layar mobile, membuat interaksi menjadi kurang efisien.
+
+### 3. **Hick’s Law**
+
+**Prinsip:** Waktu yang dibutuhkan untuk membuat keputusan meningkat dengan jumlah dan kompleksitas pilihan.
+
+**Penerapan Responsive Design:**
+Responsive design memungkinkan penyederhanaan navigasi dan pengaturan ulang konten untuk perangkat yang lebih kecil, mengurangi jumlah pilihan yang harus dipertimbangkan pengguna dalam satu tampilan. Ini membantu mempercepat pengambilan keputusan dan meningkatkan kepuasan pengguna.
+
+**Contoh Aplikasi yang Menerapkan:**
+- **Airbnb:** Desain responsif Airbnb menyederhanakan menu dan pilihan filter pada perangkat mobile, memudahkan pengguna dalam mencari akomodasi tanpa merasa kewalahan.
+
+**Contoh Aplikasi yang Tidak Menerapkan:**
+- **Craigslist (Versi Lama):** Situs Craigslist versi lama tidak responsif, dengan menu dan kategori yang padat di layar mobile, membuat pengguna bingung dan lambat dalam navigasi.
+
+### 4. **Law of Proximity**
+
+**Prinsip:** Elemen yang berdekatan cenderung dipersepsikan sebagai kelompok.
+
+**Penerapan Responsive Design:**
+Dengan responsive design, elemen-elemen yang relevan dikelompokkan dengan baik pada berbagai ukuran layar, meningkatkan keteraturan dan memudahkan pengguna dalam memahami struktur informasi.
+
+**Contoh Aplikasi yang Menerapkan:**
+- **Facebook:** Facebook mengelompokkan elemen-elemen seperti postingan, sidebar, dan menu navigasi secara responsif, memastikan keteraturan informasi di berbagai perangkat.
+
+**Contoh Aplikasi yang Tidak Menerapkan:**
+- **WordPress (Tema Lama):** Beberapa tema WordPress lama tidak responsif, menempatkan widget dan menu secara acak pada layar mobile, membuat pengguna kesulitan dalam memahami hubungan antar elemen.
+
+### 5. **Peak-End Rule**
+
+**Prinsip:** Pengalaman pengguna dinilai berdasarkan momen puncak dan akhir dari interaksi.
+
+**Penerapan Responsive Design:**
+Dengan memastikan bahwa pengalaman pengguna tetap konsisten dan menyenangkan di semua perangkat, responsive design membantu menciptakan momen puncak yang positif dan akhir yang memuaskan, meningkatkan keseluruhan persepsi pengguna terhadap aplikasi.
+
+**Contoh Aplikasi yang Menerapkan:**
+- **Netflix:** Netflix memastikan pengalaman streaming yang mulus dan estetis di berbagai perangkat, menciptakan momen puncak yang positif dan akhir yang memuaskan bagi pengguna.
+
+**Contoh Aplikasi yang Tidak Menerapkan:**
+- **MySpace (Versi Lama):** Versi lama MySpace tidak responsif, sering kali mengalami masalah tampilan dan performa di perangkat mobile, menciptakan pengalaman negatif di momen puncak dan akhir interaksi.
+
+## **Contoh Spesifik Aplikasi yang Menerapkan dan Tidak Menerapkan Responsive Design**
+
+### **Aplikasi yang Menerapkan Responsive Design:**
+
+1. **Twitter:**
+   - **Deskripsi:** Twitter menggunakan desain responsif yang memastikan tweet, gambar, dan elemen interaktif lainnya tampil optimal di berbagai perangkat.
+   - **Keuntungan:** Memudahkan pengguna untuk berinteraksi dan mengikuti update tanpa hambatan visual.
+
+2. **Medium:**
+   - **Deskripsi:** Platform blogging Medium memiliki desain responsif yang memanjakan mata dengan layout yang bersih dan mudah dibaca di desktop dan mobile.
+   - **Keuntungan:** Meningkatkan kenyamanan membaca dan menulis artikel di berbagai perangkat.
+
+3. **Slack:**
+   - **Deskripsi:** Slack menyesuaikan antarmuka pengguna secara responsif, memungkinkan akses yang lancar ke fitur-fitur seperti chat, saluran, dan notifikasi di desktop dan perangkat mobile.
+   - **Keuntungan:** Memastikan komunikasi tetap efektif tanpa mengorbankan fungsionalitas.
+
+### **Aplikasi yang Tidak Menerapkan Responsive Design (Contoh Spesifik):**
+
+1. **Old Reddit:**
+   - **Deskripsi:** Meskipun Reddit telah memperbarui banyak aspeknya, beberapa subreddits atau halaman lama masih menggunakan desain yang kurang responsif.
+   - **Kendala:** Tampilan yang tidak optimal di perangkat mobile, seperti teks yang terlalu kecil dan navigasi yang rumit.
+
+2. **BBC iPlayer (Versi Lama):**
+   - **Deskripsi:** Versi lama BBC iPlayer tidak sepenuhnya responsif, menyebabkan kesulitan dalam navigasi dan pemutaran video di perangkat mobile.
+   - **Kendala:** Pengalaman menonton yang kurang mulus dan estetis di smartphone dan tablet.
+
+3. **Adobe Flash-Based Situs:**
+   - **Deskripsi:** Banyak situs yang masih menggunakan Adobe Flash belum mendukung desain responsif, mengakibatkan tampilan yang rusak di perangkat mobile.
+   - **Kendala:** Konten yang tidak dapat diakses dengan baik dan interaksi pengguna yang terhambat.
+
+### **Kesimpulan**
+
+Responsive design bukan hanya tentang penyesuaian tampilan, tetapi juga tentang menciptakan pengalaman pengguna yang optimal sesuai dengan prinsip-prinsip UX yang baik. Dengan menerapkan responsive design, pengembang aplikasi web dapat memastikan bahwa aplikasi mereka mudah diakses, estetis, efisien, dan menyenangkan digunakan di berbagai perangkat, yang pada akhirnya meningkatkan kepuasan dan loyalitas pengguna.
+
+**Tips untuk Mengimplementasikan Responsive Design:**
+- **Gunakan Framework Responsif:** Seperti Bootstrap atau Foundation untuk mempermudah pengembangan.
+- **Prioritaskan Konten:** Fokus pada konten utama dan sesuaikan tata letak sesuai perangkat.
+- **Uji di Berbagai Perangkat:** Pastikan tampilan dan fungsionalitas optimal di semua ukuran layar.
+- **Optimalkan Kecepatan:** Pastikan halaman dimuat cepat di perangkat mobile dengan koneksi internet yang lebih lambat.
+
+Dengan memahami dan menerapkan responsive design, Anda dapat menciptakan aplikasi web yang tidak hanya menarik secara visual tetapi juga memberikan pengalaman pengguna yang unggul di era multi-perangkat saat ini.
+
+   ## Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+Dalam desain web menggunakan **CSS**, **margin**, **border**, dan **padding** adalah tiga properti penting yang mengontrol ruang dan tata letak elemen HTML. Memahami perbedaan dan cara mengimplementasikan ketiganya sangat krusial untuk menciptakan desain yang estetis dan responsif. Berikut penjelasan lengkap mengenai ketiganya:
+
+### 1. **Margin**
+
+### **Definisi:**
+Margin adalah ruang di luar batas (border) suatu elemen. Margin mengontrol jarak antara elemen tersebut dengan elemen-elemen lainnya di sekitarnya.
+
+### **Fungsi Utama:**
+- **Pemberian Ruang Antar Elemen:** Mengatur jarak antara elemen satu dengan yang lainnya.
+- **Isolasi Elemen:** Memisahkan elemen agar tidak saling tumpang tindih.
+- **Tata Letak Halaman:** Membantu dalam mengatur tata letak keseluruhan halaman web.
+
+### **Cara Implementasi:**
+Anda dapat mengatur margin menggunakan properti `margin` secara keseluruhan atau dengan properti spesifik seperti `margin-top`, `margin-right`, `margin-bottom`, dan `margin-left`.
+
+**Contoh:**
+```css
+/* Mengatur margin 20px di semua sisi */
+.element {
+    margin: 20px;
+}
+
+/* Mengatur margin berbeda untuk setiap sisi */
+.element {
+    margin-top: 10px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+}
+```
+
+## 2. **Border**
+
+### **Definisi:**
+Border adalah garis yang mengelilingi elemen. Border membatasi elemen secara visual dan dapat diatur tampilannya (warna, ketebalan, gaya garis).
+
+### **Fungsi Utama:**
+- **Penekanan Elemen:** Membuat elemen lebih menonjol atau terpisah dari elemen lain.
+- **Dekorasi Visual:** Menambah estetika desain dengan berbagai gaya garis.
+- **Pembatasan Konten:** Menandai batas konten elemen.
+
+### **Cara Implementasi:**
+Border dapat diatur menggunakan properti `border` secara keseluruhan atau dengan properti spesifik seperti `border-width`, `border-style`, dan `border-color`.
+
+**Contoh:**
+```css
+/* Mengatur border 2px solid hitam di semua sisi */
+.element {
+    border: 2px solid #000;
+}
+
+/* Mengatur border dengan gaya berbeda di setiap sisi */
+.element {
+    border-top: 3px dashed red;
+    border-right: 2px solid green;
+    border-bottom: 1px dotted blue;
+    border-left: 4px double orange;
+}
+```
+
+## 3. **Padding**
+
+### **Definisi:**
+Padding adalah ruang di dalam batas (border) elemen, antara konten elemen dengan border tersebut. Padding mengontrol jarak antara konten (seperti teks atau gambar) dengan batas elemen.
+
+### **Fungsi Utama:**
+- **Memberikan Ruang di Dalam Elemen:** Mengatur jarak antara konten dan border elemen.
+- **Meningkatkan Keterbacaan:** Membuat konten tidak terlalu rapat dengan batas elemen.
+- **Estetika Visual:** Menciptakan tampilan yang lebih seimbang dan rapi.
+
+### **Cara Implementasi:**
+Anda dapat mengatur padding menggunakan properti `padding` secara keseluruhan atau dengan properti spesifik seperti `padding-top`, `padding-right`, `padding-bottom`, dan `padding-left`.
+
+**Contoh:**
+```css
+/* Mengatur padding 15px di semua sisi */
+.element {
+    padding: 15px;
+}
+
+/* Mengatur padding berbeda untuk setiap sisi */
+.element {
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+```
+
+
+## **Implementasi Kombinasi Margin, Border, dan Padding**
+
+Untuk menciptakan desain yang harmonis, sering kali Anda perlu mengkombinasikan ketiga properti ini. Berikut adalah contoh implementasi kombinasi margin, border, dan padding:
+
+**Contoh:**
+```css
+.element {
+    /* Margin: 20px di semua sisi */
+    margin: 20px;
+
+    /* Border: 2px solid biru */
+    border: 2px solid blue;
+
+    /* Padding: 10px di semua sisi */
+    padding: 10px;
+
+    /* Tambahan gaya lainnya */
+    background-color: #f0f0f0;
+    font-size: 16px;
+}
+```
+
+**Penjelasan:**
+- **Margin:** Memberikan jarak 20px di luar border, menjauhkan elemen dari elemen lainnya.
+- **Border:** Menambahkan garis biru setebal 2px di sekitar elemen.
+- **Padding:** Menambahkan ruang 10px di dalam border, antara konten dan border.
+
+## **Tips untuk Penggunaan yang Optimal**
+
+1. **Gunakan Shorthand Properties:** Untuk efisiensi, gunakan properti shorthand seperti `margin`, `padding`, dan `border` untuk mengatur semua sisi sekaligus.
+   
+2. **Box Model Understanding:** Pahami model kotak (box model) CSS, yang mencakup margin, border, padding, dan konten. Ini membantu dalam mengatur ukuran dan ruang elemen secara keseluruhan.
+   
+3. **Konsistensi Desain:** Gunakan nilai margin, border, dan padding yang konsisten untuk menciptakan tampilan yang seragam dan profesional.
+   
+4. **Responsif Design:** Sesuaikan margin dan padding menggunakan media queries untuk memastikan desain tetap responsif di berbagai perangkat.
+
+5. **Gunakan Developer Tools:** Manfaatkan alat pengembang di browser (seperti Chrome DevTools) untuk memvisualisasikan dan menguji pengaturan margin, border, dan padding secara real-time.
+
+Dengan memahami dan mengimplementasikan margin, border, dan padding secara efektif, Anda dapat menciptakan desain web yang menarik, fungsional, dan responsif. Praktikkan penggunaan ketiga properti ini dalam proyek Anda untuk meningkatkan kualitas tata letak dan estetika halaman web.
+
+   ### Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+Dalam desain web modern, **Flexbox** (Flexible Box Layout) dan **Grid Layout** adalah dua metode layout CSS yang sangat powerful untuk mengatur tata letak elemen pada halaman web. Kedua metode ini memungkinkan desainer untuk membuat layout yang responsif, fleksibel, dan mudah diatur tanpa harus bergantung pada teknik layout tradisional seperti float atau positioning. Berikut adalah penjelasan mendalam mengenai konsep Flexbox dan Grid Layout beserta kegunaannya:
+
+## 1. **Flexbox (Flexible Box Layout)**
+
+### **Konsep Flexbox:**
+Flexbox adalah metode layout satu dimensi yang dirancang untuk mengatur elemen dalam satu baris (**row**) atau satu kolom (**column**) saja. Ini berarti Flexbox ideal untuk mengatur tata letak dalam satu arah, baik horizontal maupun vertikal.
+
+### **Kegunaan Flexbox:**
+- **Mengatur Posisi Elemen:** Flexbox memudahkan pengaturan posisi elemen secara horizontal (baris) atau vertikal (kolom), memungkinkan penempatan elemen di tengah, ruang antar elemen, atau penyesuaian posisi lainnya.
+- **Mengatur Ukuran Elemen:** Elemen dalam container Flexbox dapat diperbesar atau diperkecil secara otomatis sesuai dengan ruang yang tersedia, sehingga layout menjadi lebih fleksibel dan responsif.
+- **Mengatur Jarak Antar Elemen:** Flexbox memungkinkan pengaturan jarak antar elemen dengan mudah menggunakan properti seperti `justify-content` dan `align-items`.
+- **Membuat Layout Responsif:** Flexbox sangat berguna untuk membuat layout yang responsif karena elemen dapat dengan mudah disesuaikan untuk berbagai ukuran layar.
+
+### **Contoh Penggunaan Flexbox di Tailwind CSS:**
+```html
+<div class="flex justify-center items-center h-screen">
+  <div class="bg-blue-500 p-4">Box 1</div>
+  <div class="bg-red-500 p-4">Box 2</div>
+  <div class="bg-green-500 p-4">Box 3</div>
+</div>
+```
+**Penjelasan:**
+- `flex`: Membuat container menjadi Flex container.
+- `justify-center`: Mengatur elemen secara horizontal di tengah.
+- `items-center`: Mengatur elemen secara vertikal di tengah.
+- `h-screen`: Mengatur tinggi container agar setinggi layar.
+- Setiap `div` anak memiliki warna latar belakang dan padding yang berbeda untuk membedakan elemen.
+
+## 2. **Grid Layout**
+
+### **Konsep Grid Layout:**
+Grid Layout adalah metode layout dua dimensi yang memungkinkan pengaturan elemen dalam baris (**rows**) dan kolom (**columns**) sekaligus. Ini membuat Grid Layout ideal untuk membuat layout yang kompleks dan terstruktur, seperti tata letak halaman utama, galeri foto, atau dashboard.
+
+### **Kegunaan Grid Layout:**
+- **Mengatur Elemen dalam Baris dan Kolom:** Grid memungkinkan penempatan elemen dalam format tabel, memudahkan pembuatan layout yang terstruktur dan simetris.
+- **Mengatur Ukuran Kolom dan Baris:** Ukuran kolom dan baris dapat diatur secara independen, memberikan kontrol penuh atas tata letak elemen.
+- **Mengatur Area Grid:** Elemen dapat ditempatkan di area grid tertentu, memungkinkan desain yang lebih fleksibel dan kompleks.
+- **Membuat Layout Kompleks:** Grid sangat cocok untuk layout yang memerlukan penempatan elemen di berbagai posisi dan ukuran, seperti layout halaman web yang responsif dan dinamis.
+
+### **Contoh Penggunaan Grid Layout di Tailwind CSS:**
+```html
+<div class="grid grid-cols-3 gap-4">
+  <div class="bg-blue-500 p-4">Box 1</div>
+  <div class="bg-red-500 p-4">Box 2</div>
+  <div class="bg-green-500 p-4">Box 3</div>
+  <div class="bg-yellow-500 p-4">Box 4</div>
+  <div class="bg-purple-500 p-4">Box 5</div>
+  <div class="bg-pink-500 p-4">Box 6</div>
+</div>
+```
+**Penjelasan:**
+- `grid`: Membuat container menjadi Grid container.
+- `grid-cols-3`: Membagi grid menjadi tiga kolom.
+- `gap-4`: Menambahkan jarak antar elemen grid.
+- Setiap `div` anak memiliki warna latar belakang dan padding yang berbeda untuk membedakan elemen.
+
+## **Kapan Menggunakan Flexbox atau Grid Layout?**
+
+### **Gunakan Flexbox ketika:**
+- Anda perlu mengatur elemen dalam satu baris atau kolom.
+- Anda membutuhkan fleksibilitas dalam penyesuaian ukuran elemen berdasarkan ruang yang tersedia.
+- Anda ingin membuat layout yang responsif dan mudah diatur tanpa banyak kode.
+
+### **Gunakan Grid Layout ketika:**
+- Anda perlu mengatur elemen dalam dua dimensi, baik baris maupun kolom.
+- Anda membutuhkan kontrol penuh atas penempatan elemen di berbagai area layout.
+- Anda ingin membuat layout yang kompleks dan terstruktur dengan rapi.
+
+### **Menggabungkan Flexbox dan Grid Layout:**
+Seringkali, kombinasi kedua metode ini memberikan hasil terbaik. Misalnya, Anda bisa menggunakan Grid Layout untuk membuat struktur dasar halaman, sementara Flexbox digunakan untuk mengatur konten di dalam setiap grid item. Ini memungkinkan fleksibilitas dan kontrol yang lebih besar dalam desain layout.
+
+**Contoh Kombinasi Grid dan Flexbox:**
+```html
+<div class="grid grid-cols-3 gap-4">
+  <div class="flex justify-center items-center bg-blue-500 p-4">Box 1</div>
+  <div class="flex justify-start items-center bg-red-500 p-4">Box 2</div>
+  <div class="flex justify-end items-center bg-green-500 p-4">Box 3</div>
+  <!-- Elemen lainnya -->
+</div>
+```
+**Penjelasan:**
+- Container utama menggunakan Grid untuk membagi layout menjadi tiga kolom.
+- Setiap elemen grid item menggunakan Flexbox untuk mengatur posisi konten di dalamnya.
+
+## **Kesimpulan**
+
+**Flexbox** dan **Grid Layout** adalah dua metode layout CSS yang saling melengkapi. Flexbox unggul dalam mengatur tata letak satu dimensi dengan fleksibilitas tinggi, sementara Grid Layout menawarkan kontrol dua dimensi yang lebih kuat untuk layout yang lebih kompleks. Dengan memahami kapan dan bagaimana menggunakan masing-masing metode ini, Anda dapat menciptakan desain web yang responsif, estetis, dan fungsional.
+
+   ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+
+## halaman login
+![login1](https://drive.google.com/uc?id=1jtLeZWBaJ5FFoxA9JfeOEauKMA73Tooi)
+
+![login2](https://drive.google.com/uc?id=1rI-rU7eCbMK7o6EG_bos_PFtsN02Ri6l)
+
+## halaman register
+![register](https://drive.google.com/uc?id=1O7xWU_g4FRwsxgOWBnmL-YaOPrzd7PGK)
+
+## halaman tambah product
+![create](https://drive.google.com/uc?id=1xQ9ixnFszldS_8cqFyeDHED6Mi9Y9pZH)
+
+## halaman daftar product kosong
+![nocar1](https://drive.google.com/uc?id=16u4qWmXSDP8dWOqZIHSPEStD4Rzp13OE)
+
+![nocar2](https://drive.google.com/uc?id=15TBf2E3-Cr3Z-Ew32Wr0FTS0eP5NC-ei)
+
+## halaman daftar product isi
+![car1](https://drive.google.com/uc?id=1b_cqs_iMVoKzxG4YopLZK-YouWtV_yFz)
+
+![car2](https://drive.google.com/uc?id=1Trv9BMEUpPs96c_wG8nKVrn2_99dnp4E)
+
+   
 </details>
 
 <br>
 Fariz Muhammad Rayhansyah Ramadhan
 <br>
 2306203854
+

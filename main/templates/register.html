@@ -1,32 +1,221 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block meta %}
 <title>Register</title>
 {% endblock meta %}
 
 {% block content %}
+<div class="fixed inset-0 flex items-center justify-center bg-white p-4 sm:p-6 lg:p-8 overflow-hidden">
+  <div class="w-full max-w-md space-y-4">
+    <!-- Welcome Message -->
+    <div>
+      <img src="{% static 'image/logo.png' %}" alt="Register" class="mx-auto h-16 w-auto mb-4 sm:h-20 lg:h-24">
+      <h2 class="text-center text-2xl font-extrabold text-gray-900 sm:text-3xl">
+        Create an account.
+      </h2>
+      <p class="mt-2 text-center text-sm text-gray-600">
+        Already have an account? 
+        <a href="{% url 'main:login' %}" class="font-medium text-[#f05225] hover:text-[#A66E38]">
+          Login here.
+        </a>
+      </p>
+    </div>
 
-<div class="login">
-  <h1>Register</h1>
+    <!-- Register Form -->
+    <form class="mt-8 space-y-6" method="POST">
+      {% csrf_token %}
+      <div class="rounded-md shadow-sm -space-y-px flex flex-col gap-4">
+        <!-- Username Input -->
+        <div>
+          <label for="{{ form.username.id_for_label }}" class="sr-only">Username</label>
+          <input type="text" name="username" id="{{ form.username.id_for_label }}" required
+            class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#f05225] focus:border-[#f05225] focus:z-10 sm:text-sm"
+            placeholder="Username">
+        </div>
 
-  <form method="POST">
-    {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-      <tr>
-        <td></td>
-        <td><input type="submit" name="submit" value="Daftar" /></td>
-      </tr>
-    </table>
-  </form>
+        <!-- Password Input -->
+        <div>
+          <label for="{{ form.password1.id_for_label }}" class="sr-only">Password</label>
+          <input type="password" name="password1" id="{{ form.password1.id_for_label }}" required
+            class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#f05225] focus:border-[#f05225] focus:z-10 sm:text-sm"
+            placeholder="Password">
+        </div>
 
-  {% if messages %}
-  <ul>
-    {% for message in messages %}
-    <li>{{ message }}</li>
-    {% endfor %}
-  </ul>
-  {% endif %}
+        <!-- Confirm Password Input -->
+        <div>
+          <label for="{{ form.password2.id_for_label }}" class="sr-only">Confirm Password</label>
+          <input type="password" name="password2" id="{{ form.password2.id_for_label }}" required
+            class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#f05225] focus:border-[#f05225] focus:z-10 sm:text-sm"
+            placeholder="Confirm Password">
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button type="submit"
+          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#f05225] hover:bg-[#A66E38] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f05225]">
+          Register
+        </button>
+      </div>
+    </form>
+
+    {% if messages %}
+    <div class="mt-4 space-y-2">
+      {% for message in messages %}
+        <div class="{% if message.tags == 'error' %}bg-red-100 border border-red-400 text-red-700{% endif %} px-4 py-3 rounded-md relative" role="alert">
+          <span class="block sm:inline">{{ message }}</span>
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Terms and Privacy Policy Links -->
+    <p class="text-xs text-gray-500 mt-4 text-center sm:text-sm">
+      By registering, I agree to the 
+      <a href="#" class="font-medium text-[#f05225] hover:text-[#A66E38]" onclick="openModal('tosModal')">Terms of Service</a> and 
+      <a href="#" class="font-medium text-[#f05225] hover:text-[#A66E38]" onclick="openModal('privacyModal')">Privacy Policy</a>.
+      I also agree to receive emails and communication relating to Karesu services and offers.
+    </p>
+  </div>
 </div>
+
+<!-- Modal for Terms of Service (ToS) -->
+<div id="tosModal" class="hidden fixed z-50 inset-0 overflow-y-hidden h-screen">
+  {% comment %} <div class="flex items-center justify-center min-h-screen px-4 py-12 h-full"> {% endcomment %}
+    <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all h-full sm:max-w-lg sm:w-full m-auto flex flex-col justify-center items-center">
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 max-h-screen overflow-y-auto h-[80%] relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 text-center" id="modal-title">
+              Terms of Service for Karesu
+            </h3>
+            <div class="mt-2">
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>1. Acceptance of Terms:</strong> By using Karesu ("Service"), you agree to these Terms. If you disagree, do not use the Service.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>2. Service Description:</strong> Karesu provides an online platform for managing tasks or accessing project management tools. All features, content, and services are subject to these Terms.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>3. User Accounts:</strong> Must be 13+. Maintain confidentiality. Provide accurate information.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>4. Prohibited Activities:</strong> Illegal use, interference, impersonation, etc.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>5. Privacy Policy:</strong> Your use of the service is subject to Karesu's Privacy Policy.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>6. Intellectual Property:</strong> All content is the property of Karesu or its licensors.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>7. User Content:</strong> You retain ownership of your content but grant us a license to use it.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>8. Termination:</strong> Karesu can suspend or terminate your access if you violate the Terms.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>9. Disclaimer of Warranties:</strong> The service is provided "as is" without any guarantees.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>10. Limitation of Liability:</strong> Karesu is not responsible for any indirect damages.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>11. Changes to the Terms:</strong> Karesu reserves the right to modify these Terms.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>12. Governing Law:</strong> These Terms are governed by the laws of your jurisdiction.
+              </p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>13. Contact Us:</strong> If you have questions, contact us at fariz.muhammad31@ui.ac.id.
+              </p>
+            </div>
+        <div class="flex justify-end">
+          <button type="button" class="mt-3 inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:w-auto sm:text-sm" onclick="closeModal('tosModal')">
+            Close
+          </button>
+        </div>  
+      </div>
+    </div>
+</div>
+
+<!-- Modal for Privacy Policy -->
+<div id="privacyModal" class="hidden fixed z-50 inset-0 overflow-y-hidden h-screen">
+  <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all h-full sm:max-w-lg sm:w-full m-auto flex flex-col justify-center items-center">
+    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 max-h-screen overflow-y-auto h-[80%] relative">
+        <div class="sm:flex sm:items-start">
+          <div class="text-center sm:mt-0 sm:ml-4 sm:text-left">
+            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+              Privacy Policy for Karesu
+            </h3>
+            <div class="mt-2">
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>1. Information We Collect</strong><br>
+                We collect information that you provide directly to us when you use our service, including your name, email address, and any other information you choose to provide. We also collect information about how you interact with our service.
+              </p>
+              <ul class="list-disc list-inside text-sm text-gray-500 leading-relaxed mb-4">
+                <li>Personal Information: Such as your name, email address, and password when you create an account.</li>
+                <li>Usage Information: Information about how you use our service, including your activity on the site and device information.</li>
+                <li>Cookies: We use cookies to track your usage and preferences to enhance your experience on our platform.</li>
+              </ul>
+
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>2. How We Use Your Information</strong><br>
+                We use your information to provide and improve our services. Specifically, we use your information to:
+              </p>
+              <ul class="list-disc list-inside text-sm text-gray-500 leading-relaxed mb-4">
+                <li>Provide customer support and respond to inquiries.</li>
+                <li>Improve and personalize your experience on our platform.</li>
+                <li>Send updates, notifications, and promotional content (you can opt out).</li>
+                <li>Analyze usage patterns and improve the functionality of our service.</li>
+              </ul>
+
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>3. Sharing of Your Information</strong><br>
+                We do not share your personal information with third parties except in the following cases:
+              </p>
+              <ul class="list-disc list-inside text-sm text-gray-500 leading-relaxed mb-4">
+                <li>With your consent.</li>
+                <li>To comply with legal obligations or enforce our Terms of Service.</li>
+                <li>To trusted third-party service providers who help us operate our platform (e.g., hosting, analytics, customer support).</li>
+              </ul>
+
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>4. Data Security</strong><br>
+                We take reasonable measures to protect your data from unauthorized access, alteration, or destruction. However, no method of transmission over the Internet or electronic storage is completely secure.
+              </p>
+
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>5. Your Choices</strong><br>
+                You can update your account information or delete your account at any time by contacting us at fariz.muhammad31@ui.ac.id.
+              </p>
+
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                <strong>6. Changes to This Privacy Policy</strong><br>
+                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on our website.
+              </p>
+            </div>
+          </div>
+        </div>
+      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="closeModal('privacyModal')">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Open modal and disable page scroll
+  function openModal(modalId) {
+    document.getElementById(modalId).classList.remove('hidden');
+    document.body.classList.add('overflow-hidden'); // Disable body scroll
+  }
+
+  // Close modal and enable page scroll
+  function closeModal(modalId) {
+    document.getElementById(modalId).classList.add('hidden');
+    document.body.classList.remove('overflow-hidden'); // Enable body scroll
+  }
+</script>
 
 {% endblock content %}

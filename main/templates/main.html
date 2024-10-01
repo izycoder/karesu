@@ -1,45 +1,82 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>Karesu - Directly Sell Your Car</title>
+{% endblock meta %}
+
 {% block content %}
-<h1>karesu</h1>
+{% include 'navbar.html' %}
+<div class="top-16 flex flex-col">
+<!-- Hero Section for "Directly Sell Your Car" -->
+<div class="relative bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pt-8 md:pb-20 lg:pb-28 xl:pb-32">
+      
+      <!-- Flexbox for responsive layout -->
+      <div class="flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between"> <!-- Stacks text below image on mobile -->
 
-<h5>Nama Aplikasi: </h5>
-<p>{{ nama_aplikasi }}<p>
-<h5>Name: </h5>
-<p>{{ nama }}<p>
-<h5>Class: </h5>
-<p>{{ kelas }}<p>
+        <!-- Left Side: Hero Text -->
+        <div class="lg:w-1/2 px-4 sm:px-6 lg:px-8 mt-6 lg:mt-16 text-center lg:text-left"> 
+          <h1 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl"> <!-- Adjust size -->
+            <span class="block">Get Your</span>
+            <span class="block text-[#f05225]">Dream Car</span>
+          </h1>
+          <p class="mt-5 text-sm sm:text-base md:text-lg text-gray-500">
+            Get the best deals on your vehicle with Karesu. Simple, fast, and secure transactions.
+          </p>
+          <div class="mt-6 sm:mt-8">
+            <a href="{% url 'main:show_products' %}" class="inline-block px-5 py-3 text-base font-medium rounded-md text-white bg-[#f05225] hover:bg-[#A66E38] transition duration-300">
+              Get Started
+            </a>
+          </div>
+        </div>
 
-{% if not product_entries %}
-<p>Belum ada data product pada karesu.</p>
-{% else %}
-<table>
-  <tr>
-    <th>Product Name</th>
-    <th>Price</th>
-    <th>Description</th>
-  </tr>
+        <!-- Right Side: Hero Images -->
 
-  {% comment %} Berikut cara memperlihatkan data product di bawah baris ini 
-  {% endcomment %} 
-  {% for product_entry in product_entries %}
-  <tr>
-    <td>{{product_entry.name}}</td>
-    <td>{{product_entry.price}}</td>
-    <td>{{product_entry.description}}</td>
-  </tr>
-  {% endfor %}
-</table>
-{% endif %}
+        <!-- Mobile Image (Visible only on small screens, above text) -->
+        <div class="lg:w-1/2 flex justify-center lg:justify-end lg:hidden"> <!-- Visible only on mobile -->
+          <img src="{% static 'image/maincarmobile.png' %}" alt="Mobile Dream Car" class="w-full max-w-xs md:max-w-md h-auto object-contain"> <!-- Different image for mobile -->
+        </div>
 
-<br />
+        <!-- Desktop Image (Visible only on large screens) -->
+        <div class="lg:w-1/2 justify-center lg:justify-end lg:absolute lg:top-0 lg:right-0 lg:mt-0 lg:max-w-xl xl:max-w-2xl lg:h-full hidden lg:block"> <!-- Larger max width for desktop -->
+          <img src="{% static 'image/maincar.png' %}" alt="Desktop Dream Car" class="w-full h-auto object-contain">
+        </div>
 
-<a href="{% url 'main:create_product_entry' %}">
-  <button>Add New Prodduct Entry</button>
-</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-<a href="{% url 'main:logout' %}">
-  <button>Logout</button>
-</a>
-<h5>Sesi terakhir login: {{ last_login }}</h5>
+<!-- Product Listings Section -->
+<div class="bg-gray-100 py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <h2 class="text-base text-[#f05225] font-semibold tracking-wide uppercase">Featured Cars</h2>
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Explore the Best Deals
+      </p>
+    </div>
 
+    <div class="mt-10">
+      {% if not product_entries %}
+      <div class="text-center">
+        <p class="text-gray-500">No cars listed yet. Be the first to add your car!</p>
+        <a href="{% url 'main:create_product_entry' %}" class="mt-4 inline-block px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#f05225] hover:bg-[#A66E38]">
+          Sell Your Car
+        </a>
+      </div>
+      {% else %}
+      <!-- Responsive Grid -->
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"> 
+        {% for product_entry in product_entries %}
+        {% include 'card_product.html'%}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+</div>
 {% endblock content %}
