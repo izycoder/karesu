@@ -839,27 +839,34 @@ Seringkali, kombinasi kedua metode ini memberikan hasil terbaik. Misalnya, Anda 
    ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
 
 ## halaman login
+### User menginput username<br>
 ![login1](https://drive.google.com/uc?id=1jtLeZWBaJ5FFoxA9JfeOEauKMA73Tooi)
 
+### Jika username terdaftar, user diminta untuk menginput password<br>
 ![login2](https://drive.google.com/uc?id=1rI-rU7eCbMK7o6EG_bos_PFtsN02Ri6l)
 
 ## halaman register
+### Halaman untuk daftar user baru<br>
 ![register](https://drive.google.com/uc?id=1O7xWU_g4FRwsxgOWBnmL-YaOPrzd7PGK)
 
 ## halaman tambah product
+### User dapat menambahkan mobil<br>
 ![create](https://drive.google.com/uc?id=1xQ9ixnFszldS_8cqFyeDHED6Mi9Y9pZH)
 
 ## halaman daftar product kosong
+### Tidak ada product yang ditambahkan di main<br>
 ![nocar1](https://drive.google.com/uc?id=16u4qWmXSDP8dWOqZIHSPEStD4Rzp13OE)
 
+### Tidak ada product yang ditambahkan di products<br>
 ![nocar2](https://drive.google.com/uc?id=15TBf2E3-Cr3Z-Ew32Wr0FTS0eP5NC-ei)
 
 ## halaman daftar product isi
+### Ada product yang ditambahkan di main<br>
 ![car1](https://drive.google.com/uc?id=1b_cqs_iMVoKzxG4YopLZK-YouWtV_yFz)
 
+### Ada product yang ditambahkan di products<br>
 ![car2](https://drive.google.com/uc?id=1Trv9BMEUpPs96c_wG8nKVrn2_99dnp4E)
 
-   
 </details>
 
 <br>
