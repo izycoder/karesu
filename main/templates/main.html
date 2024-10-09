@@ -3,6 +3,8 @@
 
 {% block meta %}
 <title>Karesu - Directly Sell Your Car</title>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
+
 {% endblock meta %}
 
 {% block content %}
@@ -59,24 +61,250 @@
       </p>
     </div>
 
-    <div class="mt-10">
-      {% if not product_entries %}
-      <div class="text-center">
-        <p class="text-gray-500">No cars listed yet. Be the first to add your car!</p>
-        <a href="{% url 'main:create_product_entry' %}" class="mt-4 inline-block px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#f05225] hover:bg-[#A66E38]">
-          Sell Your Car
-        </a>
+    
+    <!-- Conditional Button -->
+<div id="buttonContainer" class="mt-10 mb-10 text-center">
+  <p class="text-gray-500 mb-4">No cars listed yet. Be the first to add your car!</p>
+  <button class="btn bg-[#f05225] hover:bg-[#A66E38] text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105" onclick="showModal();">
+    Sell Your Car
+  </button>
+</div>
+
+
+
+
+    <div id="product_entry_cards" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Product entries will be dynamically added here -->
+    </div>
+    
+    <!-- Modal for AJAX submission -->
+    <div id="crudModal" tabindex="-1" aria-hidden="true"  class="hidden fixed inset-0 z-50 w-full flex items-center justify-center bg-gray-800 bg-opacity-50 overflow-x-hidden overflow-y-auto transition-opacity duration-300 ease-out">
+      <div id="crudModalContent" class="relative bg-white rounded-lg shadow-lg w-5/6 sm:w-3/4 md:w-1/2 lg:w-1/3 mx-4 sm:mx-0 transform scale-95 opacity-0 transition-transform transition-opacity duration-300 ease-out">
+        <!-- Modal content here -->
+        <div class="flex items-center justify-between p-4 border-b rounded-t">
+          <h3 class="text-xl font-semibold text-gray-900">
+            Add New Product Entry
+          </h3>
+          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" id="closeModalBtn">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+        </div>
+        <!-- Modal body -->
+        <div class="px-6 py-4 space-y-6 form-style">
+          <form id="ProductForm">
+            {% csrf_token %}
+            <div class="mb-4">
+              <label for="product_name" class="block text-sm font-medium text-gray-700">Product Name</label>
+              <input type="text" id="product_name" name="product_name" class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Enter your product name" required>
+              <span id="productNameError" class="text-red-500 text-xs hidden">Product Name is required.</span>
+          </div>
+          
+          <div class="mb-4">
+              <label for="product_price" class="block text-sm font-medium text-gray-700">Product Price</label>
+              <input type="number" id="product_price" name="product_price" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+              <span id="productPriceError" class="text-red-500 text-xs hidden">Valid Product Price is required.</span>
+          </div>
+          
+          <div class="mb-4">
+              <label for="product_description" class="block text-sm font-medium text-gray-700">Product Description</label>
+              <textarea id="product_description" name="product_description" rows="3" class="mt-1 block w-full h-52 resize-none border border-gray-300 rounded-md p-2" required></textarea>
+              <span id="productDescriptionError" class="text-red-500 text-xs hidden">Product Description is required.</span>
+          </div>
+          
+          </form>
+        </div>
+        <!-- Modal footer -->
+        <div class="flex justify-end p-6 border-t border-gray-200 rounded-b space-x-2">
+          <button type="button" class="bg-gray-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg" id="cancelButton">Cancel</button>
+          <button type="submit" id="submitProductEntry" form="ProductForm" class="bg-[#f05225] hover:bg-[#A66E38] text-white font-bold py-2 px-4 rounded-lg">Save</button>
+        </div>
       </div>
-      {% else %}
-      <!-- Responsive Grid -->
-      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"> 
-        {% for product_entry in product_entries %}
-        {% include 'card_product.html'%}
-        {% endfor %}
-      </div>
-      {% endif %}
     </div>
   </div>
 </div>
-</div>
+
+<script>
+  async function getProductEntries() {
+    return fetch("{% url 'main:show_json' %}").then((res) => res.json())
+  }
+
+  async function refreshProductEntries() {
+    const container = document.getElementById("product_entry_cards");
+    container.innerHTML = "";  // Clear the container
+    const productEntries = await getProductEntries();  // Fetch products
+
+    if (productEntries.length === 0) {
+    // Update button to "Sell Your Car"
+    buttonContainer.innerHTML = `
+      <p class="text-gray-500 mb-4">No cars listed yet. Be the first to add your car!</p>
+      <button class="btn bg-[#f05225] hover:bg-[#A66E38] text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105" onclick="showModal();">
+        Sell Your Car
+      </button>
+    `;
+    } else {
+      productEntries.slice(-3).reverse().forEach((item) => {
+        const name = DOMPurify.sanitize(item.fields.name);
+        const price = DOMPurify.sanitize(item.fields.price);
+        const description = DOMPurify.sanitize(item.fields.description);
+        const image = DOMPurify.sanitize(item.image);
+        container.innerHTML += `
+          <div class="relative p-4 bg-white border-2 border-[#f05225] rounded-md shadow-md mb-6 w-96">
+                    <div class="absolute -top-3 -right-3 flex space-x-1">
+                        <!-- Edit Button -->
+                        <a href="/edit-product/${item.pk}" class="bg-yellow-500 hover:bg-yellow-600 text-white rounded-full p-2 transition duration-300 shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/>
+                            </svg>
+                        </a>
+                        
+                        <!-- Delete Button -->
+<a href="javascript:void(0);" 
+   class="bg-red-500 hover:bg-red-600 text-white rounded-full p-2 transition duration-300 shadow-md"
+   onclick="deleteProductEntry('${item.pk}')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/>
+    </svg>
+</a>
+                    </div>
+
+                    <!-- Product Image -->
+                    <img src="${item.image}" alt="${item.fields.name}" class="w-full h-48 object-cover rounded-md mb-4">
+
+                    <!-- Product Title -->
+                    <h3 class="text-xl font-bold text-[#f05225]">${item.fields.name}</h3>
+
+                    <!-- Product Description -->
+                    <p class="text-gray-600">${item.fields.description}</p>
+
+                    <!-- Price and Status -->
+                    <div class="mt-4">
+                        <p class="text-gray-700 font-semibold">Price: <span class="text-indigo-600">Rp ${item.fields.price}</span></p>
+                        <p class="text-gray-700 font-semibold">Status: <span class="text-green-600">Available</span></p>
+                    </div>
+                </div>
+        `;
+      });
+
+      buttonContainer.innerHTML = `
+      <button data-modal-target="crudModal" data-modal-toggle="crudModal" class="btn bg-[#f05225] hover:bg-[#A66E38] text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105" onclick="showModal();">
+        Add New Car Listing
+      </button>
+    `;
+
+    }
+  }
+  
+
+  function deleteProductEntry(productId) {
+    fetch(`/delete-product/${productId}/`, {
+        method: "DELETE",
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+    })
+    .then(response => {
+            refreshProductEntries();
+            hideModal(); // Refresh the product list after deletion
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function validateForm() {
+  // Sanitize inputs with DOMPurify
+  const productName = DOMPurify.sanitize(document.getElementById('product_name').value.trim());
+  const productPrice = document.getElementById('product_price').value.trim();
+  const productDescription = DOMPurify.sanitize(document.getElementById('product_description').value.trim());
+
+  let isValid = true;
+
+  // Reset error messages
+  document.getElementById('productNameError').classList.add('hidden');
+  document.getElementById('productPriceError').classList.add('hidden');
+  document.getElementById('productDescriptionError').classList.add('hidden');
+
+  // Validate product name
+  if (productName === "" || productName !== document.getElementById('product_name').value.trim()) {
+      // Show error if the sanitized input is empty or different from the original (indicating XSS was stripped)
+      document.getElementById('productNameError').classList.remove('hidden');
+      isValid = false;
+  }
+
+  // Validate product price
+  if (productPrice === "" || isNaN(productPrice) || productPrice <= 0) {
+      document.getElementById('productPriceError').classList.remove('hidden');
+      isValid = false;
+  }
+
+  // Validate product description
+  if (productDescription === "") {
+      document.getElementById('productDescriptionError').classList.remove('hidden');
+      isValid = false;
+  }
+
+  return isValid;
+}
+
+function addProductEntry() {
+    if (!validateForm()) {
+      // Prevent form submission and keep the modal open if the form is invalid
+      return false;
+  }
+
+    // Proceed with sanitized data if form is valid
+    const formData = new FormData();
+    formData.append("product_name", DOMPurify.sanitize(document.getElementById('product_name').value.trim()));
+    formData.append("product_price", document.getElementById('product_price').value.trim());
+    formData.append("product_description", DOMPurify.sanitize(document.getElementById('product_description').value.trim()));
+
+    fetch("{% url 'main:add_product_ajax' %}", {
+      method: "POST",
+      body: formData,
+    })
+    .then(response => { 
+      refreshProductEntries();
+      hideModal();
+    })
+    .catch(error => console.error('Error:', error));
+
+    document.getElementById("ProductForm").reset();
+    return false;
+}
+
+document.getElementById("submitProductEntry").addEventListener("click", (e) => {
+    e.preventDefault();
+    addProductEntry();
+});
+
+
+  function showModal() {
+    const modal = document.getElementById('crudModal');
+    const modalContent = document.getElementById('crudModalContent');
+    modal.classList.remove('hidden'); 
+    setTimeout(() => {
+      modalContent.classList.remove('opacity-0', 'scale-95');
+      modalContent.classList.add('opacity-100', 'scale-100');
+    }, 50);
+  }
+
+  function hideModal() {
+    const modal = document.getElementById('crudModal');
+    const modalContent = document.getElementById('crudModalContent');
+    modalContent.classList.remove('opacity-100', 'scale-100');
+    modalContent.classList.add('opacity-0', 'scale-95');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 150);
+  }
+
+  document.getElementById("cancelButton").addEventListener("click", hideModal);
+  document.getElementById("closeModalBtn").addEventListener("click", hideModal);
+
+  document.addEventListener('DOMContentLoaded', refreshProductEntries);
+</script>
+
+
+
 {% endblock content %}

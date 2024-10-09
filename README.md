@@ -613,7 +613,7 @@ Responsive design bukan hanya tentang penyesuaian tampilan, tetapi juga tentang 
 - **Uji di Berbagai Perangkat:** Pastikan tampilan dan fungsionalitas optimal di semua ukuran layar.
 - **Optimalkan Kecepatan:** Pastikan halaman dimuat cepat di perangkat mobile dengan koneksi internet yang lebih lambat.
 
-Dengan memahami dan menerapkan responsive design, Anda dapat menciptakan aplikasi web yang tidak hanya menarik secara visual tetapi juga memberikan pengalaman pengguna yang unggul di era multi-perangkat saat ini.
+Dengan memahami dan menerapkan responsive design, kita dapat menciptakan aplikasi web yang tidak hanya menarik secara visual tetapi juga memberikan pengalaman pengguna yang unggul di era multi-perangkat saat ini.
 
    ## Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
 Dalam desain web menggunakan **CSS**, **margin**, **border**, dan **padding** adalah tiga properti penting yang mengontrol ruang dan tata letak elemen HTML. Memahami perbedaan dan cara mengimplementasikan ketiganya sangat krusial untuk menciptakan desain yang estetis dan responsif. Berikut penjelasan lengkap mengenai ketiganya:
@@ -629,7 +629,7 @@ Margin adalah ruang di luar batas (border) suatu elemen. Margin mengontrol jarak
 - **Tata Letak Halaman:** Membantu dalam mengatur tata letak keseluruhan halaman web.
 
 ### **Cara Implementasi:**
-Anda dapat mengatur margin menggunakan properti `margin` secara keseluruhan atau dengan properti spesifik seperti `margin-top`, `margin-right`, `margin-bottom`, dan `margin-left`.
+Kita dapat mengatur margin menggunakan properti `margin` secara keseluruhan atau dengan properti spesifik seperti `margin-top`, `margin-right`, `margin-bottom`, dan `margin-left`.
 
 **Contoh:**
 ```css
@@ -687,7 +687,7 @@ Padding adalah ruang di dalam batas (border) elemen, antara konten elemen dengan
 - **Estetika Visual:** Menciptakan tampilan yang lebih seimbang dan rapi.
 
 ### **Cara Implementasi:**
-Anda dapat mengatur padding menggunakan properti `padding` secara keseluruhan atau dengan properti spesifik seperti `padding-top`, `padding-right`, `padding-bottom`, dan `padding-left`.
+Kita dapat mengatur padding menggunakan properti `padding` secara keseluruhan atau dengan properti spesifik seperti `padding-top`, `padding-right`, `padding-bottom`, dan `padding-left`.
 
 **Contoh:**
 ```css
@@ -708,7 +708,7 @@ Anda dapat mengatur padding menggunakan properti `padding` secara keseluruhan at
 
 ## **Implementasi Kombinasi Margin, Border, dan Padding**
 
-Untuk menciptakan desain yang harmonis, sering kali Anda perlu mengkombinasikan ketiga properti ini. Berikut adalah contoh implementasi kombinasi margin, border, dan padding:
+Untuk menciptakan desain yang harmonis, sering kali Kita perlu mengkombinasikan ketiga properti ini. Berikut adalah contoh implementasi kombinasi margin, border, dan padding:
 
 **Contoh:**
 ```css
@@ -745,7 +745,7 @@ Untuk menciptakan desain yang harmonis, sering kali Anda perlu mengkombinasikan 
 
 5. **Gunakan Developer Tools:** Manfaatkan alat pengembang di browser (seperti Chrome DevTools) untuk memvisualisasikan dan menguji pengaturan margin, border, dan padding secara real-time.
 
-Dengan memahami dan mengimplementasikan margin, border, dan padding secara efektif, Anda dapat menciptakan desain web yang menarik, fungsional, dan responsif. Praktikkan penggunaan ketiga properti ini dalam proyek Anda untuk meningkatkan kualitas tata letak dan estetika halaman web.
+Dengan memahami dan mengimplementasikan margin, border, dan padding secara efektif, Kita dapat menciptakan desain web yang menarik, fungsional, dan responsif. Praktikkan penggunaan ketiga properti ini dalam proyek Kita untuk meningkatkan kualitas tata letak dan estetika halaman web.
 
    ### Jelaskan konsep flex box dan grid layout beserta kegunaannya!
 Dalam desain web modern, **Flexbox** (Flexible Box Layout) dan **Grid Layout** adalah dua metode layout CSS yang sangat powerful untuk mengatur tata letak elemen pada halaman web. Kedua metode ini memungkinkan desainer untuk membuat layout yang responsif, fleksibel, dan mudah diatur tanpa harus bergantung pada teknik layout tradisional seperti float atau positioning. Berikut adalah penjelasan mendalam mengenai konsep Flexbox dan Grid Layout beserta kegunaannya:
@@ -807,17 +807,17 @@ Grid Layout adalah metode layout dua dimensi yang memungkinkan pengaturan elemen
 ## **Kapan Menggunakan Flexbox atau Grid Layout?**
 
 ### **Gunakan Flexbox ketika:**
-- Anda perlu mengatur elemen dalam satu baris atau kolom.
-- Anda membutuhkan fleksibilitas dalam penyesuaian ukuran elemen berdasarkan ruang yang tersedia.
-- Anda ingin membuat layout yang responsif dan mudah diatur tanpa banyak kode.
+- Kita perlu mengatur elemen dalam satu baris atau kolom.
+- Kita membutuhkan fleksibilitas dalam penyesuaian ukuran elemen berdasarkan ruang yang tersedia.
+- Kita ingin membuat layout yang responsif dan mudah diatur tanpa banyak kode.
 
 ### **Gunakan Grid Layout ketika:**
-- Anda perlu mengatur elemen dalam dua dimensi, baik baris maupun kolom.
-- Anda membutuhkan kontrol penuh atas penempatan elemen di berbagai area layout.
-- Anda ingin membuat layout yang kompleks dan terstruktur dengan rapi.
+- Kita perlu mengatur elemen dalam dua dimensi, baik baris maupun kolom.
+- Kita membutuhkan kontrol penuh atas penempatan elemen di berbagai area layout.
+- Kita ingin membuat layout yang kompleks dan terstruktur dengan rapi.
 
 ### **Menggabungkan Flexbox dan Grid Layout:**
-Seringkali, kombinasi kedua metode ini memberikan hasil terbaik. Misalnya, Anda bisa menggunakan Grid Layout untuk membuat struktur dasar halaman, sementara Flexbox digunakan untuk mengatur konten di dalam setiap grid item. Ini memungkinkan fleksibilitas dan kontrol yang lebih besar dalam desain layout.
+Seringkali, kombinasi kedua metode ini memberikan hasil terbaik. Misalnya, Kita bisa menggunakan Grid Layout untuk membuat struktur dasar halaman, sementara Flexbox digunakan untuk mengatur konten di dalam setiap grid item. Ini memungkinkan fleksibilitas dan kontrol yang lebih besar dalam desain layout.
 
 **Contoh Kombinasi Grid dan Flexbox:**
 ```html
@@ -834,7 +834,7 @@ Seringkali, kombinasi kedua metode ini memberikan hasil terbaik. Misalnya, Anda 
 
 ## **Kesimpulan**
 
-**Flexbox** dan **Grid Layout** adalah dua metode layout CSS yang saling melengkapi. Flexbox unggul dalam mengatur tata letak satu dimensi dengan fleksibilitas tinggi, sementara Grid Layout menawarkan kontrol dua dimensi yang lebih kuat untuk layout yang lebih kompleks. Dengan memahami kapan dan bagaimana menggunakan masing-masing metode ini, Anda dapat menciptakan desain web yang responsif, estetis, dan fungsional.
+**Flexbox** dan **Grid Layout** adalah dua metode layout CSS yang saling melengkapi. Flexbox unggul dalam mengatur tata letak satu dimensi dengan fleksibilitas tinggi, sementara Grid Layout menawarkan kontrol dua dimensi yang lebih kuat untuk layout yang lebih kompleks. Dengan memahami kapan dan bagaimana menggunakan masing-masing metode ini, Kita dapat menciptakan desain web yang responsif, estetis, dan fungsional.
 
    ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
 
@@ -866,6 +866,200 @@ Seringkali, kombinasi kedua metode ini memberikan hasil terbaik. Misalnya, Anda 
 
 ### Ada product yang ditambahkan di products<br>
 ![car2](https://drive.google.com/uc?id=1Trv9BMEUpPs96c_wG8nKVrn2_99dnp4E)
+
+</details>
+
+<details tugas6>
+  <summary><b style="font-size:25px;">📕 TUGAS 6 - JavaScript dan AJAX </b></summary>
+
+## 1. Manfaat Penggunaan JavaScript dalam Pengembangan Aplikasi Web
+### Manfaat Penggunaan JavaScript dalam Pengembangan Aplikasi Web
+
+JavaScript (JS) adalah bahasa pemrograman yang sangat penting dalam pengembangan aplikasi web, terutama karena kemampuannya dalam menciptakan pengalaman pengguna yang dinamis dan interaktif. Beberapa manfaat utama dari penggunaan JavaScript dalam pengembangan web adalah:
+
+1. **Meningkatkan Interaktivitas Pengguna**: Salah satu kekuatan utama JavaScript adalah kemampuannya untuk memperbarui konten di halaman web secara real-time tanpa perlu me-reload seluruh halaman. Dengan menggunakan AJAX (Asynchronous JavaScript and XML), situs web dapat mengambil data dari server di latar belakang dan memperbarui tampilan secara dinamis. Contoh umumnya adalah fitur auto-refresh feed di media sosial atau peta interaktif yang memperbarui lokasi pengguna secara langsung.
+
+2. **Memperbaiki Performa Web**: Karena JavaScript berjalan di sisi klien (browser), ini berarti banyak proses dapat dilakukan tanpa harus melibatkan server secara langsung. Misalnya, validasi form dapat dilakukan di browser pengguna sebelum data dikirim ke server. Ini mengurangi beban server dan meningkatkan performa aplikasi secara keseluruhan, terutama pada aplikasi yang harus menangani banyak pengguna sekaligus.
+
+3. **Pengalaman Pengguna yang Lebih Baik**: JavaScript dapat digunakan untuk membuat elemen-elemen visual yang lebih menarik dan responsif, seperti animasi, transisi halaman, atau efek hover. Ini tidak hanya membuat halaman web terlihat lebih menarik, tetapi juga membuat interaksi dengan halaman lebih halus dan alami. Penggunaan framework seperti React atau Vue.js memungkinkan developer untuk mengelola perubahan state aplikasi secara efisien, memberikan pengalaman pengguna yang lebih responsif.
+
+4. **Multifungsi di Sisi Klien dan Server**: Dengan adanya teknologi seperti Node.js, JavaScript tidak hanya terbatas pada pengembangan sisi klien (front-end) tetapi juga dapat digunakan di sisi server (back-end). Artinya, pengembang dapat menggunakan JavaScript untuk seluruh siklus pengembangan aplikasi, mulai dari tampilan pengguna (UI) hingga pengelolaan data di server. Hal ini membuat JavaScript sangat fleksibel dan efisien bagi developer yang menginginkan satu bahasa untuk seluruh aplikasi.
+
+5. **Kompatibilitas Lintas Platform**: Salah satu keuntungan besar JavaScript adalah kemampuannya untuk berjalan di hampir semua perangkat dan browser modern. Hal ini membuat JavaScript menjadi bahasa yang ideal untuk pengembangan aplikasi web lintas platform. Pengguna dapat mengakses aplikasi berbasis JavaScript baik dari desktop, tablet, maupun perangkat seluler tanpa masalah kompatibilitas yang berarti.
+
+6. **Pengembangan Modular dengan Pustaka dan Kerangka Kerja**: JavaScript memiliki ekosistem yang sangat kaya dengan banyak pustaka (library) dan kerangka kerja (framework) yang mempermudah pengembangan aplikasi. Contohnya, pustaka seperti jQuery memudahkan manipulasi DOM, sedangkan kerangka kerja seperti Angular atau Vue membantu dalam pengelolaan state aplikasi besar secara modular dan terorganisir.
+
+Dengan manfaat-manfaat ini, JavaScript menjadi bahasa yang tak terpisahkan dari pengembangan aplikasi web modern dan menjadi pilihan utama bagi banyak pengembang di seluruh dunia.
+  
+## 2. Fungsi dari Penggunaan `await` ketika Menggunakan `fetch()` dan Apa yang Terjadi Jika Tidak Menggunakannya
+
+Dalam JavaScript, `fetch()` adalah API yang digunakan untuk melakukan permintaan HTTP (seperti GET atau POST) ke server, dan ia mengembalikan sebuah **Promise**. Promise ini tidak langsung berisi data yang kita minta, melainkan merupakan janji bahwa data tersebut akan tersedia setelah proses permintaan selesai.
+
+Fungsi **`await`** dalam hal ini digunakan untuk **menunggu** hasil dari Promise tersebut sebelum melanjutkan eksekusi kode. Dengan menggunakan `await`, kita bisa memperlakukan kode asinkron seperti kode sinkron biasa. Contohnya:
+
+```javascript
+async function fetchData() {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    console.log(data);
+}
+```
+
+Pada contoh di atas, proses `fetch()` mengirim permintaan HTTP, dan kata kunci **`await`** akan menunda eksekusi berikutnya (yaitu `response.json()`) sampai Promise dari `fetch()` selesai, yaitu ketika data respons sudah diterima dari server. Tanpa `await`, JavaScript akan langsung melanjutkan eksekusi tanpa menunggu hasil dari `fetch()`, yang berarti kode berikutnya bisa dijalankan sebelum data benar-benar tersedia.
+
+### Apa yang Terjadi Jika Tidak Menggunakan `await`?
+
+Jika kita tidak menggunakan `await` pada `fetch()`, maka Promise yang dihasilkan oleh `fetch()` tidak akan "di-resolve" sebelum melanjutkan ke baris berikutnya. Contoh tanpa `await`:
+
+```javascript
+function fetchData() {
+    const response = fetch('https://api.example.com/data');
+    console.log(response);  // Akan menampilkan Promise, bukan data
+}
+```
+
+Dalam kasus di atas, `console.log(response)` akan langsung dieksekusi sebelum permintaan selesai, sehingga yang ditampilkan adalah Promise yang masih **pending** (belum selesai), bukan hasil respons dari server. Ini tentu tidak sesuai harapan karena kita belum bisa mengakses data yang diambil dari server.
+
+Untuk menghindari hal ini, **`await`** digunakan agar kita dapat menunggu hasil Promise tersebut sebelum melanjutkan ke langkah berikutnya, memastikan bahwa data sudah tersedia sebelum digunakan.
+
+## 3. Alasan Penggunaan Decorator `csrf_exempt` pada View yang Digunakan untuk AJAX POST
+
+Dalam Django, decorator `csrf_exempt` digunakan untuk **mengecualikan** view dari perlindungan CSRF (Cross-Site Request Forgery). CSRF adalah mekanisme keamanan yang melindungi aplikasi web dari serangan yang mencoba menggunakan kredensial pengguna untuk mengirim permintaan tanpa sepengetahuan pengguna. Namun, pada beberapa situasi, terutama saat menggunakan **AJAX POST**, ada alasan khusus mengapa kita mungkin perlu menggunakan `csrf_exempt`:
+
+1. **Menghindari Penolakan Permintaan Tanpa Token CSRF:**
+   Saat melakukan AJAX POST request dari client-side JavaScript, sering kali token CSRF tidak secara otomatis disertakan dalam permintaan tersebut. Jika token tidak ditemukan, Django akan memblokir permintaan sebagai tindakan pencegahan keamanan. Dalam kasus tertentu, misalnya saat berinteraksi dengan API eksternal atau ketika token CSRF sulit diterapkan pada permintaan AJAX, kita dapat menggunakan `csrf_exempt` untuk menghindari **penolakan permintaan**.
+
+2. **Sederhana untuk Implementasi API:**
+   Jika aplikasi menyediakan API yang terbuka atau digunakan oleh aplikasi pihak ketiga, menggunakan `csrf_exempt` dapat mempermudah akses ke API tersebut tanpa perlu menangani token CSRF. Ini sangat umum dalam **REST API** di mana otentikasi dilakukan menggunakan metode lain seperti token Bearer atau OAuth.
+
+3. **Pengujian dan Pengembangan:**
+   Dalam lingkungan pengembangan atau saat melakukan **pengujian** aplikasi, terkadang lebih praktis untuk mengecualikan view tertentu dari validasi CSRF agar proses pengembangan tidak terhambat oleh error validasi token. Penggunaan `csrf_exempt` dalam konteks ini dapat mempercepat iterasi pengembangan dan pengujian.
+
+Namun, penggunaan `csrf_exempt` harus dilakukan dengan hati-hati karena mengurangi lapisan keamanan yang disediakan oleh Django untuk melindungi aplikasi dari serangan CSRF. Disarankan untuk tidak menggunakannya pada view yang menangani data sensitif, kecuali benar-benar diperlukan dan ada langkah keamanan lain yang diterapkan.
+
+Sebagai contoh, cara menggunakan decorator ini adalah:
+
+```python
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+
+@csrf_exempt
+def my_ajax_view(request):
+    if request.method == "POST":
+        data = {"message": "Permintaan POST diterima"}
+        return JsonResponse(data)
+```
+
+Pada contoh di atas, view `my_ajax_view` dapat menerima permintaan POST tanpa harus memeriksa token CSRF.
+
+### 4. Alasan Pembersihan Data Input Pengguna Dilakukan di Backend
+
+Pembersihan data input pengguna di backend adalah langkah krusial untuk memastikan keamanan, keandalan, dan integritas aplikasi web. Meskipun data pengguna bisa dibersihkan di frontend menggunakan JavaScript, pembersihan di backend tetap harus dilakukan. Berikut beberapa alasan penting mengapa pembersihan data input di backend tidak boleh diabaikan:
+
+1. **Keamanan Terhadap Serangan:**
+   Serangan seperti **SQL Injection**, **Cross-Site Scripting (XSS)**, dan **Cross-Site Request Forgery (CSRF)** biasanya berasal dari input yang tidak aman. Meskipun frontend bisa membantu memfilter sebagian besar input, seorang penyerang masih dapat mengirimkan permintaan langsung ke server menggunakan alat seperti Postman atau curl, melewati frontend sepenuhnya. Pembersihan data di backend memastikan bahwa input yang diterima aman dan tidak berbahaya bagi aplikasi.
+
+2. **Validasi dengan Data Sebenarnya:**
+   Validasi di frontend bisa dimanipulasi atau diabaikan oleh pengguna yang jahat. Karena semua kode frontend berjalan di browser pengguna, pengguna memiliki kendali penuh atas kode tersebut. Oleh karena itu, validasi dan pembersihan di backend lebih **dapat dipercaya** karena pengguna tidak dapat memanipulasi logika backend.
+
+3. **Integritas Data:**
+   Input yang tidak bersih atau tidak sesuai dengan format yang diharapkan bisa merusak integritas data dalam sistem. Backend harus memastikan bahwa semua input yang disimpan di database atau diproses oleh aplikasi sesuai dengan standar dan format yang telah ditentukan. Ini penting untuk menjaga konsistensi data dan menghindari error saat memproses data lebih lanjut.
+
+4. **Standar dari Aturan:**
+   Banyak aplikasi yang harus mengikuti aturan atau standar tertentu dalam penanganan data, terutama dalam konteks privasi dan keamanan, seperti **GDPR** atau **HIPAA**. Backend bertanggung jawab memastikan bahwa semua data yang diproses sesuai dengan aturan tersebut, dan salah satu caranya adalah dengan membersihkan input sebelum memproses atau menyimpannya.
+
+5. **Mengurangi Beban pada Client-Side:**
+   Meskipun validasi di frontend bisa meningkatkan pengalaman pengguna dengan memberikan feedback instan, pembersihan dan validasi utama tetap sebaiknya dilakukan di backend untuk mengurangi **beban pada client-side**. Ini memastikan bahwa server tetap bekerja dengan data yang bersih dan terstruktur, terlepas dari kondisi atau perangkat pengguna.
+
+Dengan pembersihan di backend, kita dapat memastikan bahwa data yang diterima aplikasi telah melewati pemeriksaan yang memadai, mengurangi risiko serangan, dan menjaga integritas sistem.
+
+## 5. Implementasi Checklist Secara Step-by-Step
+Untuk mengimplementasikan checklist di atas, langkah-langkah yang saya lakukan adalah sebagai berikut:
+### AJAX `GET`
+#### Ubahlah kode cards data mood agar dapat mendukung AJAX `GET`. Lakukan pengambilan data mood menggunakan AJAX `GET`. Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.
+
+dalam template html yang kita ingin ambil productnya misalnya `main.html` kita bisa tambahkan script dengan fungsi `getProductEntries()` di dalamnya yang berisi
+```python
+    <script>
+    . . .
+    async function getProductEntries() {
+    return fetch("{% url 'main:show_json' %}").then((res) => res.json())
+    . . .
+  }
+```
+nantinya kita bisa "mengupdate" product yang ditampilkan dengan fungsi `refreshProductEntries()` yang di dalamnya berisi
+```javascript
+    ...
+
+    async function refreshProductEntries() {
+        const container = document.getElementBy("product_entry_cards");
+        container.innerHTML = ""; 
+        const productEntries = await getProductEntries(); 
+    ...
+    if (productEntries.length === 0) {
+        ...
+     }
+    else{
+        ...
+        productEntries.slice(-3).reverse().forEach((item=> {
+            ...
+        }
+
+        ...
+    }
+    
+    ...
+
+    }
+
+```
+#### Dengan ini kita juga telah melakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar mood terbaru tanpa reload halaman utama secara keseluruhan.
+
+dalam `views.py` kita harus merubah cara mengambil data di fungsi `show_json` menjadi
+```python
+    data = Product.objects.filter(user=request.user)
+```
+dengan ini kita sudah menggunakan AJAX untuk mengambil data produk secara dinamis dan memperbarui tampilan produk tanpa perlu me-reload halaman dan data yang diambil hanyalah data milik pengguna yang logged-in.
+
+### AJAX `POST`
+#### Buatlah fungsi view baru untuk menambahkan product baru ke dalam basis data.
+
+kita bisa membuat fungsi baru dalam `views.py` dengan nama `add_product_ajax(request):` yang berisi
+
+```python
+    ...
+
+    @csrf_exempt
+    @require_POST
+    def add_product_ajax(request):
+        name = strip_tags(request.POST.get("product_name"))
+        price = request.POST.get("product_price")
+        description = strip_tags(request.POST.get("product_description"))
+        user = request.user
+        new_product = Product(name=name, price=price, description=description, user=user)
+        new_product.save()
+        
+        return HttpResponse(b"CREATED", status=201)
+    
+    ...
+```
+dengan ini fungsi view baru untuk menambahkan product dengan ajax telah terbuat. 
+
+#### Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat. dan  hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.
+
+di dalam `urls.py` kita tambahkan 
+```python
+    ...
+    from main.views import ..., add_product_ajax
+    ...
+
+    urlpatterns = [
+    ...
+    path('create-ajax/', add_product_ajax, name='add_product_ajax'),
+    ...
+    ]
+```
+dengan ini sudah terhubung ke path /create-ajax/
 
 </details>
 
